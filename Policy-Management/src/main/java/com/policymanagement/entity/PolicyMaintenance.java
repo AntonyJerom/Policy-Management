@@ -4,9 +4,13 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Size;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
+import java.time.LocalDateTime;
 
 @Entity
 @Data
@@ -16,12 +20,21 @@ public class PolicyMaintenance {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    Long maintenanceId;
+    private Long maintenanceId;
 
-    Long policyId;
-    String action;
-    String details;
-    Long performedBy; // agent id FK
-    String performedAt;
+    @NotNull
+    private Long policyId;
 
+    @NotNull
+    @Size(max = 255)
+    private String action;
+
+    @Size(max = 1000)
+    private String details;
+
+    @NotNull
+    private Long performedBy;
+
+    @NotNull
+    private LocalDateTime performedAt;
 }
