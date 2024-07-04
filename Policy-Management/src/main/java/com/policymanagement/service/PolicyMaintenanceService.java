@@ -15,5 +15,7 @@ public interface PolicyMaintenanceService {
 
     List<ResponsePolicyMaintenanceDto> getAllPolicyMaintenances();
 
+    ResponsePolicyMaintenanceDto updatePolicyMaintenance(Long id, RequestPolicyMaintenanceDto requestDto);
+
     void deletePolicyMaintenance(Long id);
 }
