@@ -27,7 +27,6 @@ public class Policies {
     int maturityAmount;
     String Status;
     Long agentId;
-    Long policyTypeId;
     Date createdAt;
     Date updatedAt;
 
