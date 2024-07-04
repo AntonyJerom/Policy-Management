@@ -11,4 +11,7 @@ public interface PolicyService {
     ResponseAddPolicyDto saveNewPolicy(RequestAddPolicyDto addPolicyDto);
 
     List<ResponsePolicyDto> getAllPolicies();
+
+    List<ResponsePolicyDto> getPoliciesByPolicyTypeId(Long policyTypeId);
+
 }

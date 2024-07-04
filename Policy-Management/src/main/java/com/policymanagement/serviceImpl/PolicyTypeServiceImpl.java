@@ -1,7 +1,9 @@
 package com.policymanagement.serviceImpl;
 
 import com.policymanagement.dto.RequestAddPolicyTypeDto;
+import com.policymanagement.dto.ResponsePolicyDto;
 import com.policymanagement.dto.ResponsePolicyTypeDto;
+import com.policymanagement.entity.Policies;
 import com.policymanagement.entity.PolicyTypes;
 import com.policymanagement.repository.PolicyTypesRepository;
 import com.policymanagement.service.PolicyTypeService;

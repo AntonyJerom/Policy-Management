@@ -17,7 +17,7 @@ public class PolicyTypeController {
     @Autowired
     private PolicyTypeService policyTypeService;
 
-    @PostMapping
+    @PostMapping("/addPolicyType")
     public ResponseEntity<ResponsePolicyTypeDto> addPolicyType(@RequestBody RequestAddPolicyTypeDto requestAddPolicyTypeDto) {
         ResponsePolicyTypeDto response = policyTypeService.addPolicyType(requestAddPolicyTypeDto);
         return new ResponseEntity<>(response, HttpStatus.CREATED);
@@ -27,9 +27,10 @@ public class PolicyTypeController {
 //        }
     }
 
-    @GetMapping
+    @GetMapping("/getPolicyType")
     public ResponseEntity<List<ResponsePolicyTypeDto>> getAllPolicyType() {
         List<ResponsePolicyTypeDto> allPolicyType = policyTypeService.getAllPolicyType();
         return ResponseEntity.ok(allPolicyType);
     }
+
 }
