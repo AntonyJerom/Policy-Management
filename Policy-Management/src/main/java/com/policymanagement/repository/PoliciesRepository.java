@@ -10,7 +10,7 @@ import java.util.Optional;
 
 @Repository
 public interface PoliciesRepository extends JpaRepository<Policies, Long> {
-    List<Policies> findByPolicyTypesPolicyTypeId(Long policyTypeId);
+    List<Policies> findByPolicyTypesPolicyTypeId(long policyTypeId);
     Optional<Policies> findByPolicyName(String policyName);
 
 }

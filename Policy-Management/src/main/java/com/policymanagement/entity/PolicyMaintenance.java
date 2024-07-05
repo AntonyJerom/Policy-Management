@@ -13,6 +13,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.time.LocalDateTime;
+import java.util.Date;
 
 @Entity
 @Data
@@ -22,11 +23,11 @@ public class PolicyMaintenance {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long maintenanceId;
+    private long maintenanceId;
 
     @NotNull(message = "Policy ID should not be null")
     @Min(value = 1, message = "Policy ID should be a positive number")
-    private Long policyId;
+    private long policyId;
 
     @NotNull(message = "Action should not be null")
     @Size(max = 255, message = "Action should not exceed 255 characters")
@@ -37,8 +38,8 @@ public class PolicyMaintenance {
 
     @NotNull(message = "Performed By should not be null")
     @Min(value = 1, message = "Performed By should be a positive number")
-    private Long performedBy;
+    private long performedBy;
 
     @NotNull(message = "Performed At should not be null")
-    private LocalDateTime performedAt;
+    private Date performedAt;
 }

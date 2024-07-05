@@ -1,6 +1,7 @@
 package com.policymanagement.controller;
 
 import com.policymanagement.dto.RequestAddPolicyDto;
+import com.policymanagement.dto.ResponsePolicyByIdDto;
 import com.policymanagement.dto.ResponsePolicyDto;
 import com.policymanagement.dto.ResponseAddPolicyDto;
 import com.policymanagement.service.PolicyService;
@@ -29,14 +30,6 @@ public class PoliciesController {
     public ResponseEntity<ResponseAddPolicyDto> addNewPolicy (@RequestBody RequestAddPolicyDto addPolicyDto){
         ResponseAddPolicyDto responseAddPolicyDto = policyService.saveNewPolicy(addPolicyDto);
         return new ResponseEntity<>(responseAddPolicyDto,HttpStatus.CREATED);
-//      {          "policyNumber":"py0074",
-//                "policyName":"policy 4",
-//                "premiumAmount":1000,
-//                "paymentMode":"Online",
-//                "maturityDate":"3years",
-//                "maturityAmount":30000,
-//                "createdAt":"2024-07-01T07:30:02.186+00:00",
-//                "status":"active"}
     }
 
     @Operation(summary = "Get all policies ", description = "Retrieve a list of policies")
@@ -58,6 +51,14 @@ public class PoliciesController {
     public ResponseEntity<List<ResponsePolicyDto>> getAllPoliciesByPolicyType(@PathVariable long policyTypeId){
         List<ResponsePolicyDto> policiesByPolicyTypeId = policyService.getPoliciesByPolicyTypeId(policyTypeId);
         return ResponseEntity.ok(policiesByPolicyTypeId);
+    }
+
+
+    @GetMapping("/getPolicyById/{policyId}")
+    public ResponseEntity<ResponsePolicyByIdDto> getPolicyById(@PathVariable long policyId){
+        ResponsePolicyByIdDto policyById = policyService.getPolicyById(policyId);
+        return new ResponseEntity<>(policyById, HttpStatus.OK);
+
     }
 
 

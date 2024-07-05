@@ -1,6 +1,7 @@
 package com.policymanagement.service;
 
 import com.policymanagement.dto.RequestAddPolicyDto;
+import com.policymanagement.dto.ResponsePolicyByIdDto;
 import com.policymanagement.dto.ResponsePolicyDto;
 import com.policymanagement.dto.ResponseAddPolicyDto;
 
@@ -12,6 +13,8 @@ public interface PolicyService {
 
     List<ResponsePolicyDto> getAllPolicies();
 
-    List<ResponsePolicyDto> getPoliciesByPolicyTypeId(Long policyTypeId);
+    List<ResponsePolicyDto> getPoliciesByPolicyTypeId(long policyTypeId);
+
+    public ResponsePolicyByIdDto getPolicyById(long policyId);
 
 }

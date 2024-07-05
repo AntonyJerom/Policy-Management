@@ -43,6 +43,9 @@ public class RequestAddPolicyDto {
     String status;
 
     @Schema(description = "Policy type ID", example = "1")
-    Long policyTypeId;
+    long policyTypeId;
+
+    long agentId;
+
 
 }

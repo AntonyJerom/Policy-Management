@@ -48,7 +48,7 @@ public class PolicyMaintenanceController {
             @ApiResponse(responseCode = "404", description = "Policy maintenance record not found")
     })
     @PutMapping("/{id}")
-    public ResponseEntity<ResponsePolicyMaintenanceDto> updatePolicyMaintenance(@PathVariable Long id, @Valid @RequestBody RequestPolicyMaintenanceDto requestDto) {
+    public ResponseEntity<ResponsePolicyMaintenanceDto> updatePolicyMaintenance(@PathVariable long id, @Valid @RequestBody RequestPolicyMaintenanceDto requestDto) {
         ResponsePolicyMaintenanceDto responseDTO = policyMaintenanceService.updatePolicyMaintenance(id, requestDto);
         return ResponseEntity.ok(responseDTO);
     }
@@ -59,7 +59,7 @@ public class PolicyMaintenanceController {
             @ApiResponse(responseCode = "404", description = "Policy maintenance record not found")
     })
     @DeleteMapping("/{id}")
-    public ResponseEntity<Void> deletePolicyMaintenance(@PathVariable Long id) {
+    public ResponseEntity<Void> deletePolicyMaintenance(@PathVariable long id) {
         policyMaintenanceService.deletePolicyMaintenance(id);
         return ResponseEntity.noContent().build();
     }

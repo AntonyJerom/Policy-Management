@@ -44,7 +44,7 @@ public class PolicyMaintenanceServiceImpl implements PolicyMaintenanceService {
                 .collect(Collectors.toList());
     }
     @Override
-    public ResponsePolicyMaintenanceDto updatePolicyMaintenance(Long id, RequestPolicyMaintenanceDto requestDto) {
+    public ResponsePolicyMaintenanceDto updatePolicyMaintenance(long id, RequestPolicyMaintenanceDto requestDto) {
         Optional<PolicyMaintenance> existingPolicyMaintenanceOpt = policyMaintenanceRepository.findById(id);
         if (existingPolicyMaintenanceOpt.isPresent()) {
             PolicyMaintenance existingPolicyMaintenance = existingPolicyMaintenanceOpt.get();
@@ -57,7 +57,7 @@ public class PolicyMaintenanceServiceImpl implements PolicyMaintenanceService {
     }
 
     @Override
-    public void deletePolicyMaintenance(Long id) {
+    public void deletePolicyMaintenance(long id) {
         policyMaintenanceRepository.deleteById(id);
     }
 }
