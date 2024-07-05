@@ -1,5 +1,6 @@
 package com.policymanagement.entity;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -15,11 +16,12 @@ public class PolicyTypes {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    Long policyTypeId;
+    long policyTypeId;
     String typeName;
     String description;
 
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "policyTypes")
+    @JsonManagedReference(value = "policyType")
     List<Policies> listOfPolicies;
 
 }

@@ -7,9 +7,9 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class ResponsePolicyTypeDto {
 
-    long policyTypeId;
-    String typeName;
-    String policyDescription;
+public class ResponseDataAgentDto {
+    private String agentName;
+    private String agentContactInfo;
+    private String territoryRefName;
 }

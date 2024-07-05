@@ -1,6 +1,7 @@
 package com.policymanagement.entity;
 
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -16,7 +17,7 @@ public class Policies {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    Long policy_id;
+    long policy_id;
 
     String policyNumber;
     String policyName;
@@ -26,11 +27,13 @@ public class Policies {
     String maturityDate;
     int maturityAmount;
     String Status;
-    Long agentId;
+    long agentId;   //Drop down
     Date createdAt;
     Date updatedAt;
 
     @ManyToOne
+    @JoinColumn(name = "policyTypeId")
+    @JsonBackReference(value = "policyType")
     PolicyTypes policyTypes;
 
 }

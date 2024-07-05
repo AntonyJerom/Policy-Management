@@ -11,12 +11,9 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 public class RequestPolicyMaintenanceDto {
 
-    Long policyId;
+    long policyId;
     String action;
     String details;
-    Long performedBy; // agent id FK
-    LocalDateTime performedAt;
-
-
+    long performedBy; // agent id FK
 
 }

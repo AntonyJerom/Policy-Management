@@ -4,18 +4,18 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.time.LocalDateTime;
+import java.util.Date;
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 public class ResponsePolicyMaintenanceDto {
 
-    Long maintenanceId;
-    Long policyId;
+    long maintenanceId;
+    long policyId;
     String action;
     String details;
-    Long performedBy; // agent id FK
-    LocalDateTime performedAt;
+    long performedBy; // agent id FK
+    Date performedAt;
 
 }
